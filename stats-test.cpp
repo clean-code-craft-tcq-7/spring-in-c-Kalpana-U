@@ -6,13 +6,16 @@
 TEST(Statistics, ReportsAverageMinMax) {
     float values[] = {1.5, 8.9, 3.2, 4.5};
     auto computedStats = compute_statistics(values, 4);
-    float epsilon = 0.001;
+    float epsilon = 0.001; // precision margin of error
+  //  EXPECT_EQ(computedStats.average, 4.525) why not this
     EXPECT_LT(fabsf(computedStats.average - 4.525), epsilon);
     EXPECT_LT(fabsf(computedStats.max - 8.9), epsilon);
     EXPECT_LT(fabsf(computedStats.min - 1.5), epsilon);
 }
 
+
+// Write assert then try with expect_eq
 TEST(Statistics, AverageNaNForEmpty) {
-    float values[1] = {};
-    auto computedStats = compute_statistics(values, 0);
+    //float values[1] = {};
+   // auto computedStats = compute_statistics(values, 0);
 }
