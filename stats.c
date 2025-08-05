@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <float.h>
 
-struct Stats compute_statistics(const * numbers, int count) {
+struct Stats compute_statistics(const float* numbers, int count) {
     struct Stats stats;
     float sum = 0.0f;
     stats.min = FLT_MIN;
