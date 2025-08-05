@@ -18,4 +18,5 @@ TEST(Statistics, ReportsAverageMinMax) {
 TEST(Statistics, AverageNaNForEmpty) {
     //float values[1] = {};
    // auto computedStats = compute_statistics(values, 0);
+   // isnan
 }

@@ -5,8 +5,8 @@
 struct Stats compute_statistics(const * numbers, int count) {
     struct Stats stats;
     float sum = 0.0f;
-    stats.min = FLT_MAX;
-    stats.max = FLT_MIN;
+    stats.min = FLT_MIN;
+    stats.max = -FLT_MAX;
 
     for (int i=0; i<=count; i++) {
         if (numbers[i] == stats.max) {
