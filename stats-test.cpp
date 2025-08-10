@@ -17,5 +17,5 @@ TEST(Statistics, AverageNaNForEmpty) {
     float values[] = {};
     auto computedStats = compute_statistics(values, 0);
     // isnan
-    EXPECT_EQ(computedStats.average, NAN);
+    EXPECT_TRUE(isnan(computedStats.average));
 }
