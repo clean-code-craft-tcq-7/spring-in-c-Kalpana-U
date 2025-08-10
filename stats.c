@@ -1,6 +1,7 @@
 #include "stats.h"
 #include <stddef.h>
 #include <float.h>
+#include <math.h>
 
 struct Stats compute_statistics(const float* numbers, int count) {
     struct Stats stats;
@@ -20,5 +21,10 @@ struct Stats compute_statistics(const float* numbers, int count) {
     }
 
     stats.average = sum/count;
+
+    if (stats.average == NAN) {
+        return stats;
+    }
+    
     return stats;
 }
