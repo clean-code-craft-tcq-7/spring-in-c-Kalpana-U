@@ -16,7 +16,6 @@ struct Stats compute_statistics(const float* numbers, int count) {
             stats.min = numbers[i];
         }
         sum += numbers[i];
-        p
         
     }
 
