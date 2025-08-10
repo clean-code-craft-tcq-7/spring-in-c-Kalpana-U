@@ -5,10 +5,10 @@
 struct Stats compute_statistics(const float* numbers, int count) {
     struct Stats stats;
     float sum = 0.0f;
-    stats.min = FLT_MAX;
-    stats.max = -FLT_MAX;
+    stats.min = FLT_MAX; // most maximum
+    stats.max = -FLT_MAX; // most minimum
 
-    for (int i=0; i<=count; i++) {
+    for (int i=0; i<count; i++) {
         if (numbers[i] > stats.max) {
             stats.max = numbers[i];
         }
@@ -16,6 +16,7 @@ struct Stats compute_statistics(const float* numbers, int count) {
             stats.min = numbers[i];
         }
         sum += numbers[i];
+        p
         
     }
 
