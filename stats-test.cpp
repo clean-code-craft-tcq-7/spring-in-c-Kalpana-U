@@ -13,10 +13,9 @@ TEST(Statistics, ReportsAverageMinMax) {
     EXPECT_LT(fabsf(computedStats.min - 1.5), epsilon);
 }
 
-
-// Write assert then try with expect_eq
 TEST(Statistics, AverageNaNForEmpty) {
-    //float values[1] = {};
-   // auto computedStats = compute_statistics(values, 0);
-   // isnan
+    float values[] = {};
+    auto computedStats = compute_statistics(values, 0);
+    // isnan
+    EXPECT_EQ(computedStats.average, NAN);
 }
