@@ -24,5 +24,12 @@ TEST(Statistics, AverageNaNForNumbers) {
     float values[] = {1,1,1,1,1};
     auto computedStats = compute_statistics(values, 5);
 
-    EXPECT_TRUE(isnan(computedStats.average));
+    EXPECT_FALSE(isan(computedStats.average));
+}
+
+TEST(Statistics, ReportsNegativeValues) {
+    float values[] = {1.5, -8.9, 3.2, 4.5};
+    auto computedStats = compute_statistics(values, 4);
+
+    EXPECT_EQ(computedStats,-1);
 }

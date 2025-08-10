@@ -9,6 +9,12 @@ struct Stats compute_statistics(const float* numbers, int count) {
     stats.min = FLT_MAX; // most maximum
     stats.max = -FLT_MAX; // most minimum
 
+    for (int j=0; j<count; j++) {
+        if (numbers[j] < 0) {
+            return -1;
+        }
+    }
+    
     for (int i=0; i<count; i++) {
         if (numbers[i] > stats.max) {
             stats.max = numbers[i];
@@ -25,6 +31,6 @@ struct Stats compute_statistics(const float* numbers, int count) {
     if (stats.average == NAN) {
         return stats;
     }
-    
+
     return stats;
 }
