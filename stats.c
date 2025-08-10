@@ -9,12 +9,16 @@ struct Stats compute_statistics(const float* numbers, int count) {
     stats.min = FLT_MAX; // most maximum
     stats.max = -FLT_MAX; // most minimum
 
+    // Check for negative values
     for (int j=0; j<count; j++) {
         if (numbers[j] < 0) {
-            return -1;
+            stats.min = -1;
+            stats.max = -1;
+            stats.average = -1;
+            return stats;
         }
     }
-    
+
     for (int i=0; i<count; i++) {
         if (numbers[i] > stats.max) {
             stats.max = numbers[i];
