@@ -31,5 +31,7 @@ TEST(Statistics, ReportsNegativeValues) {
     float values[] = {1.5, -8.9, 3.2, 4.5};
     auto computedStats = compute_statistics(values, 4);
 
-    EXPECT_EQ(computedStats,-1);
+    EXPECT_EQ(computedStats.average,-1);
+    EXPECT_EQ(computedStats.min,-1);
+    EXPECT_EQ(computedStats.max,-1);
 }
