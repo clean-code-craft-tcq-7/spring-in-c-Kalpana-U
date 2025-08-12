@@ -10,7 +10,7 @@ struct Stats compute_statistics(const float* numbers, int count) {
     stats.max = -FLT_MAX; // most minimum
 
     for (int i=0; i<count; i++) {
-         if (numbers[j] < 0) {
+         if (numbers[i] < 0) {
             stats.min = -1;
             stats.max = -1;
             stats.average = -1;
